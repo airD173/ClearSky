@@ -4,19 +4,17 @@ import pandas as pd
 import icon
 import embeds
 
+
 def main(zipcode):
     zipdb = pd.read_csv('zip_code_database.csv')
-    latitude = zipdb[zipdb['zip'] == zipcode]['latitude']
-    latitude = latitude.values[0]
-    latitude = str(latitude)
-    longitude = zipdb[zipdb['zip'] == zipcode]['longitude']
-    longitude = longitude.values[0]
-    longitude = str(longitude)
-    r = requests.get('https://api.weather.gov/points/' + latitude + ',' + longitude)
-    coord = json.loads(r.text)
-    r = requests.get(coord['properties']['forecast'])
-    forecast = json.loads(r.text)
+    latitude = zipdb[zipdb['zip'] == zipcode]['latitude'].values[0]
+    longitude = zipdb[zipdb['zip'] == zipcode]['longitude'].values[0]
+    coord = requests.get(f'https://api.weather.gov/points/{latitude},{longitude}').json()
 
+    alerts = requests.get('https://api.weather.gov/alerts/active?zone=' + requests.get(coord['properties']['county']).json()['properties']['id']).json()
+
+
+    forecast = requests.get(coord['properties']['forecast']).json()
     name = forecast['properties']['periods'][0]['name']
     temp = forecast['properties']['periods'][0]['temperature']
     thumb = icon.main(forecast['properties']['periods'][0]['icon'])
