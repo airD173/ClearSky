@@ -82,7 +82,7 @@ async def weather(ctx, *, zipcode = None):
 
 @bot.command()
 async def invite(ctx):
-    await ctx.send('<https://discord.com/oauth2/authorize?client_id=820035214788919307&permissions=92224&scope=bot>')
+    await ctx.send('<https://discord.com/oauth2/authorize?client_id=820035214788919307&permissions=10240&scope=bot>')
 
 @bot.command()
 async def help(ctx):
