@@ -6,5 +6,5 @@ To use the bot, create a new Discord application from the [Discord Developer Por
 # To do
 - Reduce the amount of different .py files by merging some of them into single .py files
 - Add build section to readme
-  -~~Add requirements.txt~~
+  - ~~Add requirements.txt~~
 - Add images to readme
