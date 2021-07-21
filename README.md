@@ -4,6 +4,7 @@ ClearSky is a Discord bot that shows weather information using the [National Wea
 # Usage
 To use the bot, create a new Discord application from the [Discord Developer Portal](https://discord.com/developersc) and create a new bot. Copy the token. Then, create a new file called `.env`. In this file, add your token using the following syntax: `TOKEN=yourtokenhere`. 
 # To do
+- Add alerts (Watches, warnings, and advisories)
 - Reduce the amount of different .py files by merging some of them into single .py files
 - Add build section to readme
   - ~~Add requirements.txt~~
