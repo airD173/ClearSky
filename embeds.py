@@ -2,7 +2,8 @@ import discord
 import icon
 
 def main(data1, data2):
-    #Data is (zipcode, name, temp, icon, short, detailed)
+    #data1 = (zipcode, name, temp, thumb, short, detailed)
+    #data2 = (alerts, name, temp, thumb, short, detailed)
     f1 = str(data1[2]) + '°F'
     f2 = str(data2[2]) + '°F'
     c1 =(data1[2] - 32) * 5 / 9
