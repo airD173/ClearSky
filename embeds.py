@@ -10,7 +10,7 @@ def main(data1, data2):
     c2 =(data2[2] - 32) * 5 / 9
     c2 = str(round(c2, 1)) + '°C'
 
-    embedf1 = discord.Embed(title = data1[0], description = None, color = 0xFFAC33)
+    embedf1 = discord.Embed(title = data1[0], description = 'Weather', color = 0xFFAC33)
     if data1[3] == None:
         pass
     else:
@@ -37,7 +37,7 @@ def main(data1, data2):
     embedf3.add_field(name = 'Weather', value = data2[5], inline = False)
     embedf3.set_footer(text = 'Page 3 of 3\nCreated by airD')
 
-    embedc1 = discord.Embed(title = data1[0], description = None, color = 0xFFAC33)
+    embedc1 = discord.Embed(title = data1[0], description = 'Weather', color = 0xFFAC33)
     if data1[3] == None:
         pass
     else:
